@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nonebot-plugin-custom-face "
+version = "0.0.1"
+description = ""
+authors = ["BG4JEC <bg4jec@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "nonebot-plugin-custom-face ", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+nonebot2 = { version = "^2.0.0rc4", extras = ["fastapi"] }
+nonebot-adapter-onebot = "^2.2.2"
+
+[build-system]
+requires = [
+"setuptools>=42",
+"wheel"
+]
+build-backend = "setuptools.build_meta"
