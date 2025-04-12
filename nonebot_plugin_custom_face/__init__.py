@@ -5,6 +5,15 @@ from nonebot.plugin import on_command
 from nonebot.params import CommandArg
 from nonebot.adapters.onebot.v11 import Bot, MessageSegment, Message, GroupMessageEvent  # 添加导入
 from nonebot.permission import SUPERUSER
+from nonebot.plugin import PluginMetadata
+
+__plugin_meta__ = PluginMetadata(
+    name="nonebot-plugin-custom-face",
+    description="提供了一些关于QQ自定义表情的API",
+    usage="Please Check README.md",
+    type="library",
+    homepage="https://github.com/2580m/nonebot-plugin-custom-face/",
+)
 
 # 定义存储路径
 CUSTOM_FACE_FILE = Path("data/sing/custom_face_list.json")
