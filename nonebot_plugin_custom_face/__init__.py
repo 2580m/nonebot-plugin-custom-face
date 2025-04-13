@@ -10,7 +10,13 @@ from nonebot.plugin import PluginMetadata
 __plugin_meta__ = PluginMetadata(
     name="nonebot-plugin-custom-face",
     description="提供了一些关于QQ自定义表情的API",
-    usage="Please Check README.md",
+    usage=(
+        '声明依赖: `require("nonebot_plugin_custom_face")`\n'
+        "导入所需API\n"
+        '更新自定义表情列表：`update_custom_face_list`\n'
+        "获取自定义表情列表：`fetch_custom_face_list`\n"
+        '发送自定义表情：`send_custom_face`'
+    ),
     type="library",
     homepage="https://github.com/2580m/nonebot-plugin-custom-face/",
 )
