@@ -1,22 +1,24 @@
 [tool.poetry]
-name = "nonebot-plugin-custom-face "
-version = "0.0.1"
-description = ""
-authors = ["BG4JEC <bg4jec@hotmail.com>"]
+name = "nonebot-plugin-custom-face"
+version = "0.0.6"
+description = "提供了关于QQ自定义表情的API"
+authors = ["BG4JEC <BG4JEC@hotmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "nonebot-plugin-custom-face ", from = "src" }
+    { include = "nonebot_plugin_custom_face" }
 ]
+repository = "https://github.com/2580m/nonebot-plugin-custom-face"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-nonebot2 = { version = "^2.0.0rc4", extras = ["fastapi"] }
+nonebot2 = { version = "^2.3.0", extras = ["fastapi"] }
 nonebot-adapter-onebot = "^2.2.2"
 
+[tool.nonebot]
+adapters = [{name="OnebotAdapterV11", module_name="nonebot.adapters.onebot.v11"}]
+plugins = ["nonebot_plugin_custom_face"]
+
 [build-system]
-requires = [
-"setuptools>=42",
-"wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -19,6 +19,7 @@ __plugin_meta__ = PluginMetadata(
     ),
     type="library",
     homepage="https://github.com/2580m/nonebot-plugin-custom-face/",
+    supported_adapters={"~onebot.v11"},
 )
 
 # 定义存储路径
