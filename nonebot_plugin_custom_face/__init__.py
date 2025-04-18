@@ -1,11 +1,12 @@
 import json
 from pathlib import Path
-from nonebot import logger
-from nonebot.plugin import on_command
-from nonebot.params import CommandArg
-from nonebot.adapters.onebot.v11 import Bot, MessageSegment, Message, GroupMessageEvent  # 添加导入
-from nonebot.permission import SUPERUSER
+from nonebot import logger, require
+from nonebot.adapters.onebot.v11 import Bot, MessageSegment, GroupMessageEvent  # 添加导入
 from nonebot.plugin import PluginMetadata
+
+require("nonebot_plugin_localstore")
+
+import nonebot_plugin_localstore as store
 
 __plugin_meta__ = PluginMetadata(
     name="nonebot-plugin-custom-face",
@@ -22,8 +23,8 @@ __plugin_meta__ = PluginMetadata(
     supported_adapters={"~onebot.v11"},
 )
 
-# 定义存储路径
-CUSTOM_FACE_FILE = Path("data/sing/custom_face_list.json")
+# 定义存储路径，接入 localstore
+CUSTOM_FACE_FILE = store.get_plugin_data_file("custom_face_list.json")
 CUSTOM_FACE_FILE.parent.mkdir(parents=True, exist_ok=True)  # 确保目录存在
 
 async def fetch_custom_face_list() -> dict:
